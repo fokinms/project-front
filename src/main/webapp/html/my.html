@@ -1,11 +1,122 @@
-<html>
+<html lang="en">
 <head>
     <title>RPG</title>
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
-    <link href="/css/my.css" rel="stylesheet">
+    <link href="../css/my.css" rel="stylesheet">
+    <link rel="icon" href="../resources/favicon.ico" type="image/x-icon">
+    <style></style>
 </head>
-<body>
+<body onload="show_page(0)">
 <h1>RPG admin panel</h1>
+<hr>
+<h2>Accounts list: </h2>
+<label for="quantity-on-page">Count per page: </label>
+<select id="quantity-on-page" onchange="show_page(0)">
+    <option value="3">3</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="20">20</option>
+</select>
 
+<table id="main-table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Race</th>
+        <th>Profession</th>
+        <th>Birthday</th>
+        <th>Banned</th>
+        <th>Level</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr></tr>
+    </tbody>
+</table>
+
+<hr>
+<div id="paging-buttons">Pages:</div>
+<hr>
+<h2>Create new account: </h2>
+<br>
+
+<div class="all_fields">
+    <div class="field">
+        <label for="new_name">Name: </label>
+        <input class="create" type="text" id="new_name" name="name">
+    </div>
+    <br>
+
+    <div class="field">
+        <label for="new_title">Title: </label>
+        <input class="create" type="text" id="new_title" name="title">
+    </div>
+    <br>
+
+    <div class="field">
+        <label for="new_race">Race: </label>
+        <select class="create" id="new_race" name='race'>
+            <option value='HUMAN'>HUMAN</option>
+            <option value='DWARF'>DWARF</option>
+            <option value='ELF'>ELF</option>
+            <option value='GIANT'>GIANT</option>
+            <option value='ORC'>ORC</option>
+            <option value='TROLL'>TROLL</option>
+            <option value='HOBBIT'>HOBBIT</option>
+        </select>
+    </div>
+    <br>
+
+    <div class="field">
+        <label for="new_profession">Profession: </label>
+        <select class="create" id="new_profession" name='profession'>
+            <option value='WARRIOR'>WARRIOR</option>
+            <option value='ROGUE'>ROGUE</option>
+            <option value='SORCERER'>SORCERER</option>
+            <option value='CLERIC'>CLERIC</option>
+            <option value='PALADIN'>PALADIN</option>
+            <option value='NAZGUL'>NAZGUL</option>
+            <option value='WARLOCK'>WARLOCK</option>
+            <option value='DRUID'>DRUID</option>
+        </select>
+    </div>
+    <br>
+
+    <div class="field">
+        <label for="new_level">Level: </label>
+        <input class="create" type="number" id="new_level" name="level" min="0" max="100">
+    </div>
+    <br>
+
+    <div class="field">
+        <label for="new_birthday">Birthday: </label>
+        <input class="create" type="date" id="new_birthday" name="birthday" min="2000-01-01" max="3000-01-01">
+    </div>
+    <br>
+
+    <div class="field">
+        <label for="new_banned">Banned: </label>
+        <select class="create" id="new_banned" name='banned'>
+            <option value='false'>false</option>
+            <option value='true'>true</option>
+        </select>
+    </div>
+    <br>
+
+    <div class="field">
+        <span>
+            <button type="submit" onclick="createAccount()"><img src="/img/save_new.png" alt='create'></button>
+        </span>
+    </div>
+
+</div>
+
+<script src="/html/js/main.js">
+
+</script>
 </body>
 </html>
